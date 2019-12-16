@@ -20,8 +20,8 @@
     document.body.appendChild(form)
 
     // 设置相应参数
-    for (let key in data) {
-      let input = document.createElement('input')
+    for (var key in data) {
+      var input = document.createElement('input')
       input.type = 'text'
       input.name = key
       input.value = data[key]
@@ -42,9 +42,7 @@
     if (window.FEEDBACK_PARAMS && window.FEEDBACK_PARAMS.prodID) {
       request(window.FEEDBACK_PARAMS.prodID, window.FEEDBACK_PARAMS.data)
     } else {
-      setTimeout(() => {
-        start()
-      }, 300)
+      setTimeout(function() { start() }, 300)
     }
   }
 
